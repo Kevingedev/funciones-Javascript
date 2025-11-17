@@ -1,0 +1,38 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+.btn-correcto,
+.btn-incorrecto,
+.btn-limpiar {
+    font-size: 2rem;
+    padding: 3rem 6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.btn-limpiar {
+
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.btn-limpiar:hover {
+    background-color: #0056b3;
+    color: #f2f2f2;
+}
+
+.btn-correcto {
+    background-color: #28a745;
+    color: #f2f2f2;
+}
+
+.btn-incorrecto {
+    background-color: #dc3545;
+    color: #f2f2f2;
+}
