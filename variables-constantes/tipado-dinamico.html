@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,179 @@
     <link rel="stylesheet" href="tipado-dinamico.css">
     <link rel="stylesheet" href="../css/main.css">
 </head>
+
 <body>
 
     <div class="caja">
-        <h2> Tipado Dinámico </h2>
+        <h2> TIPADO DINAMICO </h2>
+        <br>
+        <p>
+            JavaScript está tipado dinámicamente, lo que significa que no necesitamos declarar su tipo. Pero esto solo
+            es posible porque identifica el tipo de variable que estamos declarando y la asigna, aunque no de forma
+            explícita.
+            <br><b>Ejemplo:</b>
+        </p>
+        <pre class="pre-code">
+            <code>
+                const cliente = "Elizabeth";
+            </code>
+        </pre>
+        <p>
+            No necesitamos decirle a JavaScript que la variable cliente es de tipo string porque automáticamente detecta
+            que es de tipo string.
+        </p>
+        <pre class="pre-code">
+            <code>
+                let primerNumero = 10;
+                let segundoNumero = 5;
+                let texto = "El resultado es: ";
+            </code>
+        </pre>
+        <div class="btn-containers">
+            <button class="btn-caja" id="usoCorrecto" onclick="casosDeUso(this)">Ejemplo 1</button>
+            <button class="btn-caja" id="usoIncorrecto" onclick="casosDeUso(this)">Ejemplo 2</button>
+            <button class="btn-caja" onclick="limpiarConsola()">Limpiar</button>
+        </div>
+    </div>
+
+    <div class="caja">
+        <label for="tipado-ts">
+            <h2>TIPADO FIJO Y TYPESCRIPT</h2>
+        </label>
+        <input type="checkbox" hidden id="tipado-ts">
+        <div id="tipado-container">
+            <br>
+            <p>
+                El <b>tipado fijo</b> significa que el tipo de una variable se establece al momento de la declaración y
+                no puede cambiar durante la vida de esa variable. La verificación de tipos se realiza antes de que el
+                código se ejecute (en tiempo de transpilación).
+            </p>
+            <br>
+            <p>
+                <b>TypeScript (TS)</b> implementa esto al permitirte anotar tipos explícitamente a tus variables,
+                parámetros de función y retornos. <i>(vamos a tomar ejemplos de typescript únicamente para identificar
+                    el tipado fijo a las variables).</i>
+            </p>
+            <br>
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Características</th>
+                            <th>JavaScript - Dinámico</th>
+                            <th>TypeScript - Fíjo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Declaración</b></td>
+                            <td>No se especifica el tipo.</td>
+                            <td>El tipo se especifica con : después del nombre de la variable.</td>
+                        </tr>
+                        <tr>
+                            <td><b>Código</b></td>
+                            <td style="color: brown;">let cantidad = 10;</td>
+                            <td style="color: brown;">let cantidad: number = 10;</td>
+                        </tr>
+                        <tr>
+                            <td><b>Reasignación</b></td>
+                            <td>El tipo puede cambiar en cualquier momento.</td>
+                            <td>El tipo debe permanecer el mismo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <pre class="pre-code"><code>
+// Ejemplo de Tipado Fijo   
+<b>let nombreUsuario: string = "Juliano";
+nombreUsuario = "Elizabeth"; </b> //Esto es correcto
+nombreUsuario = 123; //Esto causaria error en la compilacion
+
+// Tipado fijo en funciones
+<b>function saludar(nombre: string): void {
+console.log(`Hola, ${nombre}.`);
+}
+
+saludar(nombreUsuario);</b>
+                </code></pre>
+            <p>
+                <b>Beneficios del Tipado Fijo en TypeScript</b>
+                <br>
+                La principal ventaja del tipado fijo en TypeScript es la detección temprana de errores:
+            <ul>
+                <li>
+                    <b>Identificación de Errores:</b> TypeScript detecta errores de tipo <i>(como pasar una cadena donde
+                        se espera un número) mientras escribes o durante la compilación, antes de que el usuario vea el
+                        programa en funcionamiento.</i>
+                </li>
+                <li>
+                    <b>Autocompletado Mejorado (IntelliSense):</b> Cuando el editor conoce el tipo de una variable,
+                    puede sugerir automáticamente los métodos y propiedades disponibles para ese tipo, mejorando la
+                    productividad.
+                </li>
+                <li>
+                    <b>Código más Robusto y Mantenible:</b> Al definir contratos de tipos claros para las funciones y
+                    variables, el código se vuelve más predecible y es más fácil de mantener y refactorizar,
+                    especialmente en proyectos grandes.
+                </li>
+            </ul>
+            </p>
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="tp-dinamico" onclick="saludar(nombreUsuario)">Ejemplo 1</button>
+                <button class="btn-caja" onclick="limpiarConsola()">Limpiar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="caja">
+        <label for="scope">
+            <h2 style="text-transform: uppercase;">Scope- Ámbito de aplicación</h2>
+        </label>
+        <input type="checkbox" hidden id="scope">
+        <div id="scope-container">
+            <br>
+            <h3>Scope Global (Ámbito Global)</h3>
+            <p>
+                El Scope Global es la región más externa de tu código.
+            <ul>
+                <li><b>Definición:</b> Las variables y funciones declaradas fuera de cualquier función o bloque se
+                    encuentran en el Scope Global.</li>
+                <li><b>Accesibilidad:</b> Pueden ser accedidas y modificadas desde cualquier parte del código, incluso
+                    dentro de funciones o bloques locales.</li>
+                <li><b>Advertencia:</b> Es una mala práctica sobrecargar el scope global, ya que puede provocar
+                    conflictos de nombres (colisiones) con otras variables en tu código o librerías externas.</li>
+            </ul>
+            </p>
+            <pre class="pre-code"><code><b>const nombreGlobal = "JavaScript";</b> // Ámbito Global
+
+<b>function mostrarNombre() {
+    console.log(nombreGlobal);</b> // Accede a la variable global
+}
+
+<b>mostrarNombre();</b> // "JavaScript"
+<b>console.log(nombreGlobal);</b> // "JavaScript"</code></pre>
+        </div>
 
     </div>
 
-    <button class="btn-correcto" id="usoCorrecto">Uso Correcto</button>
+
+
+
+
+
+
+
+
+
+    <!-- <button class="btn-correcto" id="usoCorrecto">Uso Correcto</button>
     <button class="btn-incorrecto" id="usoIncorrecto">Uso Incorrecto</button>
-
     <button class="btn-limpiar" onclick="limpiarConsola()">Limpiar la consola</button>
+    <div id="mensajes"></div> -->
 
+    <script src="tipado-dinamico.js"></script>
+    <script src="main.js"></script>
 
-
-    <div id="mensajes"></div>
-
-    <script src="tipado-dinamico.js" ></script>
-    
 </body>
+
 </html>

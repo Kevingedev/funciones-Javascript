@@ -1,8 +1,7 @@
-
 body {
     font-family: Arial, sans-serif;
-    background-color: #333;
-    color: #f2f2f2;
+    /* background-color: #333; */
+    color: #333;
 }
 
 .btn-correcto,
@@ -35,4 +34,92 @@ body {
 .btn-incorrecto {
     background-color: #dc3545;
     color: #f2f2f2;
+}
+
+.pre-code {
+    /* width: 75%; */
+    margin: 1rem auto;
+    background-color: #333;
+    color: #f2f2f2;
+    padding: 1rem;
+    border-radius: 12px;
+    font-weight: 500;
+    text-align: start;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.btn-containers {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+
+}
+
+.btn-containers button:nth-last-child(1) {
+    margin-left: auto;
+}
+
+.btn-caja {
+    padding: 0.5rem;
+    background-color: #005f73;
+    color: #f2f2f2;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-caja:hover {
+    background-color: #f2f2f2;
+    color: #005f73;
+    border-color: #005f73;
+    cursor: pointer;
+}
+
+
+table {
+    border-collapse: collapse;
+}
+
+table td,
+th {
+    padding: 0.3rem;
+    color: #333;
+}
+
+.table,
+tr,
+td,
+th {
+    border: 2px solid #005f73;
+    text-align: start;
+}
+
+ul li {
+    margin-top: 1rem;
+}
+
+/* HACIENDO VALIDACIONES DE CHECKED */
+#tipado-container {
+    display: none;
+    opacity: 0;
+
+}
+
+#tipado-ts:checked~#tipado-container {
+    display: block;
+    opacity: 1;
+}
+
+#scope-container {
+    /* display: none;
+    opacity: 0; */
+
+}
+
+#scope:checked~#scope-container {
+    display: block;
+    opacity: 1;
 }
