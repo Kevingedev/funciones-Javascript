@@ -1,0 +1,69 @@
+
+
+ body .background-video  {
+
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity:0.5 ;
+  
+
+ } 
+
+*{
+    font-family: Arial,sans-serif;
+}
+
+h1,
+h2,
+h3 {
+
+    text-align: center;
+    color: #005f73 !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 3, 0.596); 
+   
+}   
+p {
+    margin-bottom: 1rem;
+    color: #3b2727 !important;
+}
+.btn-caja{
+    padding: 0.5rem;
+    background-color: #005f73;
+    color: #f2f2f2;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+
+
+}
+.btn-caja:hover{
+    background-color: #f2f2f2;
+    color: #005f73;
+    border-color: #005f73;
+    cursor: pointer;
+
+} .limpiarConsola {
+
+    float: right;
+    
+    padding: 0.5rem;
+    background-color: #005f73;
+    color: #f2f2f2;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+
+
+} .limpiarConsola:hover{
+    background-color: #f2f2f2;
+    color: #005f73;
+    border-color: #005f73;
+    cursor: pointer;
+
+}
