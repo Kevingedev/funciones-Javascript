@@ -4,13 +4,6 @@
     box-sizing: border-box;
 }
 
-h1,
-h2,
-h3 {
-    text-align: center;
-    color: #005f73;
-    text-decoration: underline;
-}
 
 h1 {
     font-size: 36px;

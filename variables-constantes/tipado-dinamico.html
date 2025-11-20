@@ -10,41 +10,62 @@
 </head>
 
 <body>
+    <video autoplay loop muted id="video-background">
+        <source src="js.mp4" type="video/mp4">
+    </video>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#tp-dinamico">Tipado Dinámico</a></li>
+            <li><a href="#tipado-ts">Tipado Fijo</a></li>
+            <li><a href="#scope">Scope</a></li>
+        </ul>
+    </nav>
 
     <div class="caja">
-        <h2> TIPADO DINAMICO </h2>
-        <br>
-        <p>
-            JavaScript está tipado dinámicamente, lo que significa que no necesitamos declarar su tipo. Pero esto solo
-            es posible porque identifica el tipo de variable que estamos declarando y la asigna, aunque no de forma
-            explícita.
-            <br><b>Ejemplo:</b>
-        </p>
-        <pre class="pre-code">
-            <code>
-                const cliente = "Elizabeth";
-            </code>
-        </pre>
-        <p>
-            No necesitamos decirle a JavaScript que la variable cliente es de tipo string porque automáticamente detecta
-            que es de tipo string.
-        </p>
-        <pre class="pre-code">
-            <code>
-                let primerNumero = 10;
-                let segundoNumero = 5;
-                let texto = "El resultado es: ";
-            </code>
-        </pre>
-        <div class="btn-containers">
-            <button class="btn-caja" id="usoCorrecto" onclick="casosDeUso(this)">Ejemplo 1</button>
-            <button class="btn-caja" id="usoIncorrecto" onclick="casosDeUso(this)">Ejemplo 2</button>
-            <button class="btn-caja" onclick="limpiarConsola()">Limpiar</button>
+        <label class="cursor-p" for="tp-dinamico">
+            <h2 style="text-transform: uppercase;"> TIPADO DINAMICO </h2>
+        </label>
+        <input type="checkbox" hidden id="tp-dinamico">
+        <div id="tp-dinamico-container">
+            <br>
+            <p>
+                JavaScript está tipado dinámicamente, lo que significa que no necesitamos declarar su tipo. Pero esto
+                solo
+                es posible porque identifica el tipo de variable que estamos declarando y la asigna, aunque no de forma
+                explícita.
+                <br><b>Ejemplo:</b>
+            </p>
+            <pre class="pre-code">
+                <code>
+                    <b>const cliente = "Elizabeth";</b>
+                </code>
+            </pre>
+            <p>
+                No necesitamos decirle a JavaScript que la variable cliente es de tipo string porque automáticamente
+                detecta
+                que es de tipo string.
+            </p>
+            <pre class="pre-code">
+                <code>
+                    <b>
+                    let primerNumero = 10;
+                    let segundoNumero = 5;
+                    let texto = "El resultado es: ";
+                    </b>
+                </code>
+            </pre>
+            <div class="btn-containers">
+                <button class="btn-caja" id="usoCorrecto" onclick="casosDeUso(this)">Ejemplo 1</button>
+                <button class="btn-caja" id="usoIncorrecto" onclick="casosDeUso(this)">Ejemplo 2</button>
+                <button class="btn-caja btn-limpiar">Limpiar</button>
+            </div>
         </div>
     </div>
 
     <div class="caja">
-        <label for="tipado-ts">
+        <label class="cursor-p" for="tipado-ts">
             <h2>TIPADO FIJO Y TYPESCRIPT</h2>
         </label>
         <input type="checkbox" hidden id="tipado-ts">
@@ -128,13 +149,13 @@ saludar(nombreUsuario);</b>
             <br>
             <div class="btn-containers">
                 <button class="btn-caja" id="tp-dinamico" onclick="saludar(nombreUsuario)">Ejemplo 1</button>
-                <button class="btn-caja" onclick="limpiarConsola()">Limpiar</button>
+                <button class="btn-caja btn-limpiar">Limpiar</button>
             </div>
         </div>
     </div>
 
     <div class="caja">
-        <label for="scope">
+        <label class="cursor-p" for="scope">
             <h2 style="text-transform: uppercase;">Scope- Ámbito de aplicación</h2>
         </label>
         <input type="checkbox" hidden id="scope">
@@ -160,6 +181,57 @@ saludar(nombreUsuario);</b>
 
 <b>mostrarNombre();</b> // "JavaScript"
 <b>console.log(nombreGlobal);</b> // "JavaScript"</code></pre>
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="scopeGlobal" onclick="scope(this)">Ejemplo 1</button>
+            </div>
+            <br>
+            <h3>Scope Local (Ámbito Local)</h3>
+            <p>
+            <ul>
+                <li><b>Definición:</b> Las variables declaradas dentro de una función (utilizando var, let, o const) se
+                    encuentran en el Scope Local de esa función.</li>
+                <li><b>Accesibilidad:</b> Solo pueden ser accedidas dentro de la función donde fueron definidas. No son
+                    visibles ni accesibles desde el exterior (el ámbito global) ni desde otras funciones.</li>
+            </ul>
+            </p>
+            <pre class="pre-code"><code><b>function calcularSuma() {
+  let numeroLocal = 10;</b> // Ámbito Local de la función
+  <b>return numeroLocal + 5;</b>
+}
+
+<b>calcularSuma();</b> // Devuelve 15
+// console.log(numeroLocal); // ❌ Error: numeroLocal is not defined</code></pre>
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="scopeLocal" onclick="scope(this)">Ejemplo 2</button>
+            </div>
+            <br>
+            <h3>Scope de Bloque (Introducido por let y const)</h3>
+            <p>
+            <ul>
+                <li><b>Definición:</b> Las variables declaradas con let o const dentro de un bloque de código
+                    (delimitado por llaves {}), como un if, for, o simplemente un par de llaves, están limitadas a ese
+                    bloque.</li>
+                <li><b>Importancia:</b> var no respeta el scope de bloque, solo el scope de función. Usar let y const
+                    ayuda a prevenir el acceso inesperado a variables fuera del bloque donde fueron pensadas para
+                    usarse.</li>
+            </ul>
+            </p>
+            <pre class="pre-code"><code><b>if (true) {
+  const mensaje = "Hola, pertenece al bloque";
+  var antiguo = "Soy VAR, Fui declarado en bloque";
+  console.log(mensaje);</b> 
+}
+
+// console.log(mensaje); // ❌ Error: mensaje is not defined (Está limitada al bloque if)
+<b>console.log(antiguo);</b>   // ✅ Válido: "Soy VAR" (VAR ignora el scope de bloque)</code></pre>
+
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="scopeBloque" onclick="scopeBlock()">Ejemplo 3</button>
+                <button class="btn-caja btn-limpiar">Limpiar</button>
+            </div>
         </div>
 
     </div>
@@ -177,6 +249,8 @@ saludar(nombreUsuario);</b>
     <button class="btn-incorrecto" id="usoIncorrecto">Uso Incorrecto</button>
     <button class="btn-limpiar" onclick="limpiarConsola()">Limpiar la consola</button>
     <div id="mensajes"></div> -->
+
+    <button id="btn-back-to-top" class="btn-back-to-top" title="Volver arriba">↑</button>
 
     <script src="tipado-dinamico.js"></script>
     <script src="main.js"></script>
