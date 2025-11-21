@@ -4,11 +4,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sintaxis JavaScript</title>
 </head>
 
 <body>
+    <h1>SINTAXIS JAVASCRIPT</h1>
+    <div>La ubicación de código en JavaScript en un archivo HTML es fundamental para el rendimiento y la funcionalidad
+        de una página web. Para ello hay diferentes formas de vincular este código:
+    </div>
+    <div>
+        <h2>Etiqueta script</h2>
+        <p>Se utiliza para incrustar código ejecutable o datos JavaScript en HTML.</p>
+        <h3>Ubicación de la etiqueta script</h3>
+        <p>El script debe ubicarse al final del body del documento, justo antes de la etiqueta de cierre del mismo, para asegurar 
+        que el DOM esté completamente cargado antes de que se ejecute el código JavaScript.
+        </p>
+    </div>
+    <div>
+        <h2>Webpage (dos zonas principales)</h2>
+        <h3> Método 1: Vincular un archivo Javascript utilizando el elemento HEAD</h3>
+        <p>En el HTML, dentro de la etiqueta HEAD. Emplearíamos el atributo src para indicar el origen del fichero JavaScript.
+        <br>Con esto, conseguimos que el navegador cargue y ejecute el script antes de cargar el contenido del body. 
+        <br> Normalente este método se utiliza para cargar funciones que no dependen del contenido del body o para enlazar archivos de 
+        forma asíncrona/diferida. 
+        </p>
+        <h3> Método 2: Añade tu código Javascript en el encabezado de la página</h3>
+        <p>Ubicamos la etiqueta script justo antes de la etiqueta de cierre del body.
+            <br>Así conseguimos que el navegador primero cargue y muestre el contenido del body y el CSS, y luego ejecuta el script. 
+            <br> Este método mejora el rendimiento visible (el usuario ve el contenido antes) y el script tiene acceso a todos los elementos 
+            HTML de la página; por eso es la práctica más recomendada.
+        </p>
+    </div>
+    <div>
+        <h2>Archivos.js</h2>
+        <p> Un archivo con la extensión .js es un archivo de texto plano que contiene solo código JavaScript.
+            <br>Su propósito principal es separar la lógica (JS) de la estructura (HTML) y el estilo (CSS) de la página web.
+            Además: 
+            <ul>
+                <li>Mantiene el código limpio y fácil de mantener.</li>
+                <li>El mismo archivo .js puede ser enlazado y utilizado en múltiples páginas de HTML.</li>
+                <li>Los navegadores pueden almacenar en caché (temporalmente) los archivos .js externos, lo que acelera la carga de las páginas
+                    en visitas posteriores.</li>
+            </ul>
+       <p>Se enlazan al HTML usando el atributo src en la etiqueta script.</p>
+        </p>
+    </div>
+
+    <div>
+    <h2>Modo Estricto (Strict Mode) en JavaScript</h2>
     
+    <p>El modo estricto es una característia de JavaScript introducida en EcmaScript 5.
+        <br>Indica al código que debe ser ejecutaado en forma estricta.
+        <br>Esto previene que se tomen ciertas acciones, se muestren más errores, y vuelve a este lenguaje más seguro.     
+    </p>
+    <ul>
+        <p>Los cambios que introduce el Modo Estricto son:</p>
+        <li>Hace algunos errores anteriormente silenciosos ahora arrojen excepciones;</li>
+        <li>Deshabilita ciertas características confusas o inconsistentes del lenguaje;</li>
+        <li>Facilita la optimización del código por parte de los motores JavaScript, pudiendo correr más rápido que el mismo código sin Modo Estricto;</li>
+        <li>Contribuye con producir código más seguro.</li>
+    </ul>
+    <p>Para activar este modo, debemos colocar al inicio de nuestro archivo código o de nuestra función el siguiente código:</p>
+    <pre>
+        "use strict"; 
+        //o bien 
+        'use strict';
+
+        o en una función:
+
+        function prueba (){
+        'use strict';
+        console.log("Probando estricto");
+        }
+    </pre>
+
+    </div>
+
+    <div><h2>Vamos con los ejemplos:</h2></div>
+
     <button onclick="saludar('Kaixo ikaskideok')">Saludar con parámetro</button>
 
     <button onclick="SaludarSinParametro()">Saludar sin parámetro</button>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PARÁMETRO REST</h1>
+    <div class="caja">
+        <p>Los parámetros REST permiten a una función recibir un número indefinido de argumento como un array.
+            <br> Se definen usando tres puntos (...) antes del nombre del parámetro.
+        </p>
+        <pre>
+            function sumarTodo(...numeros) {
+                return numeros.reduce((acumulador, numero) => acumulador + numero, 0);
+            }
+
+            function sumar(){
+                console.log(sumarTodo(1, 2, 3));
+                console.log(sumarTodo(10, 20, 30, 40));
+            }
+        </pre>
+        <p>En este ejemplo, números se convierte en un array que contiene todos los argumentos pasados a la función.
+            <br>
+            <br>Los parámetros rest son aquellos a los que no se les ha asignado un nombre. Son instancias de Array, lo que significa que 
+            los métodos como sort, mapforeach o pop pueden aplicarse directamente.
+            <br>Estos parámetros rest pueden ser desestructurados, eso significa que sus datos pueden ser desempaquetados dentro de distintas variables.
+        </p>
+        <p>Antes de los parámetros rest se utilizaba arguments, pero ya casi ni se usa, ya que aparte de que arguments no es un array, no podemos ejecutar arguments.map (...), por ejemplo.</p>
+        <p>Los parámetros rest SIEMPRE deben de ir al final.
+            <br>
+            <br> Por ejemplo:
+            <pre>
+                function f(arg1, arg2, ...rest){}
+            </pre>
+        </p>
+
+        <button onclick="showName('Mary', 'Shelley', 'Escritora', 'Frankenstein', 'Publicado el 1 de enero de 1818')">Ejemplo 1</button>
+    </div>
+
+    <div>
+    <h1>OPERADOR SPREAD</h1>
+    <p>El operador SPREAD es similar a los parámetros rest, también usa ... , pero hace exactamente lo opuesto.
+        <br>
+        <br>El operador spread (...) permite expandir elementos de arrays y objetos obteniendo sus elementos individuales.
+        <br>Es extremadamente útil para trabajar con arrays, objeto y funciones, simplificando muchas tareas comunes.
+        <br>La sintaxis básica de un operador spread es la siguiente:
+
+        <pre>
+            const array = [1, 2, 3];
+            const nuevoArray = [...array, 4, 5];
+            console.log(nuevoArray); // [1, 2, 3, 4, 5]
+        </pre>
+    </p>
+    <p>En este ejemplo hemos creado un array. A sus elementos, le añadimos 4 y 5. Usamos esto para generar un nuevoArray con los elementos del array original, añadiendo nuevos elementos al final.
+    </p>
+
+    <button onclick="resultado">Mostrar resultado</button>
+    
+    <div>
+    <ul>
+        <h2>Uso del operador SPREAD con arrays:</h2>
+        <li><h3>Expandir un array:</h3></li>
+        <p>Uno de los usos más comunes es crear nuevos arrays a partir de arrays existentes.
+            <br>Esto es útil para copiar arrays o combinar varios arrays en uno solo. Por ejemplo:
+            <pre>
+                const array1 = [1, 2, 3];
+                const array2 = [...array1, 4, 5, 6];
+
+                console.log(array2); 
+            </pre>
+        </p>
+        <li>Copiar arrays:</li>
+        <p>El operador spread también permite crear copiar superficiales de arrays, lo que es útil para evitar efectos secundarios en operaciones de manipulación de datos:</p>
+        <pre>
+            const original = [1, 2, 3];
+            const copia = [...original];
+            console.log(copia);
+        </pre>
+        <li>Agregar elementos arrays:</li>
+        <p>Puedes utilizarlo para añadir elementos a un array existente sin modificar el array original:</p>
+            <pre>
+                const numeros = [1, 2, 3];
+                const nuevoNumero = 4;
+                const actualizado = [...numeros, nuevoNumero];
+                console.log(actualizado); 
+            </pre>
+        <li>Concatenar arrays:</li>
+        <p>De igual forma, podemos concatenar de forma sencilla dos arrays:</p>
+        <pre>
+            const array3 = [1, 2, 3];
+            const array4 = [4, 5, 6];
+            const arrayConcatenado = [...array3, ...array4];
+
+            console.log(arrayConcatenado); 
+        </pre>
+        <li>Manipulación de dos arrays anidados:</li>
+        <p>El operador spread también puede ser útil para trabajar con arrays anidados:</p>
+        <pre>
+            const matrices = [[1, 2], [3, 4]];
+            const combinada = [].concat(...matrices);
+            console.log(combinada); 
+        </pre>
+        <li>Pasar argumentos a una función:</li>
+        <p>En este ejemplo, el operador spread se utiliza para pasar los elementos del array numeros como argumentos individuales a la función sumar. </p>
+            <pre>
+                function sumar(a, b, c) {
+                return a + b + c;
+                }
+                
+                const numbers = [1, 2, 3];
+                
+                const resultado = sumar(...numbers);
+                
+                console.log(resultado); 
+            </pre>
+        <li>Desestructuración y spread:</li>
+        <p>En combinación con la Desestructuración, el operador spread permite extraer parte de un objeto y combinarlo con otros valores.</p>
+            <pre>
+                const persona = { nombre: 'Luis', edad: 28, profesion: 'Ingeniero' };
+                
+                const { nombre, ...resto } = persona;
+                
+                console.log(nombre); 
+                console.log(resto); 
+            </pre>
+    </ul>
+</div>
+<div>
+    <p>El operador spread puede tener implicaciones de rendimiento en operaciones con grandes cantidades de datos, ya que crea copias superficiales de arrays y objetos.
+        <br>
+        <br>Es recomendable utilizarlo con cuidado en situaciones donde el rendimiento sea una preocupación crítica.
+    </p>
+</div>
+    <div>
+        <h2>En resumen:</h2>
+        <p>Cuando veamos "..." en el código, son los parámetro rest o el operador spread.</p>
+        <ul> 
+            <p>¿Cómo se distinguen?</p>
+            <li>Cuando ... se encuenta al final de los parámetros de una función, son los "parámetros rest" y recogen el resto de la lista de argumentos en un array.</li>
+            <li>Cuando ... está en el llamado de una función o similar, se llama "operador spread" y expande un array en una lista.</li>
+            <p>Patrones de uso:</p>
+            <li>Parámetros Rest, son usados para crear funciones que acepten cualquier número de argumentos.</li>
+            <li>Operador spread, es usado para pasar un array a funciones que normalmente requeieren una lista de muchos argumentos.</li>
+            <p>Ambos ayudan a ir entre una lista y un array de parámetros con facilidad.</p>
+        </ul>
+    
+    
+    </div>
+
+   <script src="parametrosRest.js"></script>
+</body>
+</html>
