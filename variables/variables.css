@@ -14,7 +14,7 @@
  } 
 
 *{
-    font-family: Arial,sans-serif;
+    font-family: comic 'Segoe UI', Tahoma;
 }
 
 h1,
@@ -24,7 +24,7 @@ h3 {
     text-align: center;
     color: #005f73 !important;
     text-shadow: 2px 2px 4px rgba(0, 0, 3, 0.596); 
-   
+    text-decoration: none;
 }   
 p {
     margin-bottom: 1rem;
