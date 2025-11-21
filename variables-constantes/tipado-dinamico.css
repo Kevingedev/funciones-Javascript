@@ -23,6 +23,7 @@ h3 {
     text-align: center;
     color: #005f73;
     text-decoration: none;
+    user-select: none;
 }
 
 .pre-code {
