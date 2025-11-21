@@ -6,28 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipado Dinámico y Funciones Organicas</title>
     <link rel="stylesheet" href="tipado-dinamico.css">
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
 <body>
     <video autoplay loop muted id="video-background">
-        <source src="js.mp4" type="video/mp4">
+        <source src="../assets/img/js.mp4" type="video/mp4">
     </video>
 
-    <nav>
-        <button class="hamburger" id="hamburger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul id="nav-menu">
-            <li><a href="#">INICIO</a></li>
-            <li><a href="#sintaxis">SINTAXIS</a></li>
-            <li><a href="#variables">VARIABLES Y CONSTANTES</a></li>
-            <li><a href="#funciones-basicas">FUNCIONES BÁSICAS</a></li>
-            <li><a href="#funciones-organicas">FUNCIONES ORGANICAS</a></li>
-        </ul>
-    </nav>
+    <div id="navbar-container"></div>
 
     <div class="caja">
         <label class="cursor-p" for="tp-dinamico">
@@ -259,7 +246,9 @@ saludar(nombreUsuario);</b>
     <button id="btn-back-to-top" class="btn-back-to-top" title="Volver arriba">↑</button>
 
     <script src="tipado-dinamico.js"></script>
-    <script src="main.js"></script>
+    <script src="../ts/main.js"></script>
+    <script src="../assets/js/navbar.js"></script>
+    <script src="../assets/js/btn-scroll.js"></script>
 
 </body>
 

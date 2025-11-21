@@ -119,42 +119,6 @@ function scopeBlock() {
 
 
 
-// Back to top button functionality
-const btnBackToTop = document.getElementById("btn-back-to-top");
 
-window.onscroll = function () {
-    scrollFunction();
-};
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        btnBackToTop.style.display = "block";
-    } else {
-        btnBackToTop.style.display = "none";
-    }
-}
 
-btnBackToTop.addEventListener("click", function () {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-
-// Hamburger menu functionality
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
-
-hamburger.addEventListener("click", function () {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-});
-
-// Close menu when clicking on a link
-const navLinks = document.querySelectorAll("#nav-menu a");
-navLinks.forEach(link => {
-    link.addEventListener("click", function () {
-        hamburger.classList.remove("active");
-        navMenu.classList.remove("active");
-    });
-});
