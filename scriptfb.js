@@ -8,14 +8,20 @@
        
 /*ESTO ES UN EJEMPLO DE DECLARACION*/
 
-      let nombre="Anna";
+        let nombre="Anna";
         function mostrarNombreConsola() {
         console.log("Hola", nombre);
     }
 
+/*ESTO ES UNA INVOCACION CON PARAMETROS*/
 
-
-
+        function saludarPersona(nombre) 
+        {console.log("Hola, " + nombre + "!"); 
+    }
+        saludarPersona("Ana");
+        saludarPersona("Carlos");
+        
+/*ESTO ES UNA FUNCION ANONIMA*/
 
 
 
