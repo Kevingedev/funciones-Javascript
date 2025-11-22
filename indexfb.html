@@ -171,17 +171,35 @@
     </div>
 
     <div class="caja">
-        <h3>PARÁMETROS Y ARGUMENTOS</h3>
-        function saludarPersona(nombre) {
-        console.log("Hola, " + nombre + "!");
-        }
+        <label for="activo5">
+        <h3>PARÁMETROS Y ARGUMENTOS</h3>    </label>
+        <input type="checkbox" id="activo5" hidden>
+        <div id="container-parametrosyargumentos">
 
-        saludarPersona("Ana");
-        saludarPersona("Carlos");</code></pre>
-        <p>
-            <strong>nombre</strong> es un parámetro.<br>
-            <strong>Ana</strong> y <strong>Carlos</strong> son argumentos.
-        </p>
+       <p> Los parámetros son variables que una función espera 
+        recibir para poder trabajar.    
+        Sirven para que la función pueda usar información que 
+        tú le envías desde afuera.
+        La función por sí sola no sabe a quién saludar, 
+        qué sumar, qué mostrar…
+        Así que necesita recibir datos.<br><br>
+        ¿CÓMO SE USA EL PARAMETRO?<br><br>
+        <strong>function saludar(nombre) </strong> 
+        <br><br>
+        Declaras la función con un parámetro (una variable vacía):
+        <br><br>
+          <strong>console.log("Hola, " + nombre);</strong>
+        <br><br>
+        Dentro de la función, usas el parámetro como una variable normal.
+        <br><br><strong>saludar("Ana");</strong>
+        <br><br>
+        Ese dato reemplaza al parámetro cuando llamas a la función.
+        <br><br>
+        Y la funcion imprime:</p>
+        <button onclick="mostrarNombreConsola()">EJEMPLO</button>
+        <button class="limpiar" onclick="limpiarConsola()">LIMPIAR</button>
+        <p></p>
+    </div>    
     </div>
 
     <div class="caja">

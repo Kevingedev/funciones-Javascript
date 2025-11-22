@@ -14,7 +14,7 @@
     }
 
 /*ESTO ES UNA INVOCACION CON PARAMETROS*/
-
+/*ARREGLAR ESTO EN EL HTML TAMBIEN*/
         function saludarPersona(nombre) 
         {console.log("Hola, " + nombre + "!"); 
     }
@@ -23,9 +23,12 @@
         
 /*ESTO ES UNA FUNCION ANONIMA*/
 
+/*ESTO ES UNA FUNCION EJEMPLO PARAMETROS*/
 
-
-
+function saludar(nombre) {
+    console.log("Holita, " + nombre);
+}   
+        saludar("Anita");
 
 
 
