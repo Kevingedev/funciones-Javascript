@@ -93,6 +93,14 @@
             display:none;
             opacity: 0;
         }
+        #container-return {
+            display:none;
+            opacity: 0;
+        }
+        #container-funcionflecha {
+            display:none;
+            opacity: 0;
+        }
 
 
         #activo1:checked ~ #container-funcion {
@@ -121,16 +129,25 @@
                 opacity: 1;
              
         }
+           #activo6:checked ~ #container-return {
+               display: block;
+               opacity: 1;
+                 
+        }
+           #activo7:checked ~ #container-funcionflecha {
+               display: block;
+               opacity: 1;  
+        }
 
-        #video-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.5;
+               #video-background {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                opacity: 0.5;
           
         }
 
