@@ -122,7 +122,7 @@ nav a:hover {
     transform: rotate(-45deg) translate(8px, -8px);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1440px) {
     .hamburger {
         display: flex;
     }

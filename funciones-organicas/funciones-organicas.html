@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones Organicas</title>
+    <link rel="stylesheet" href="funciones-organicas.css" type="text/css">
+    <link rel="stylesheet" href="../assets/css/main.css" type="text/css">
+</head>
+
+<body>
+    <video autoplay loop muted id="video-background">
+        <source src="../assets/img/js.mp4" type="video/mp4">
+    </video>
+
+    <div id="navbar-container"></div>
+
+    <div class="caja">
+        <label for="foreach">
+            <h2>ForEach</h2>
+        </label>
+        <input type="checkbox" hidden id="foreach">
+        <div id="foreach-container">
+            <br>
+            <p>
+                Esta función está ahí para cuando necesitamos hacer algo con cada elemento de un array. Es simple,
+                directo, y hace exactamente lo que dice: "por cada elemento, haz esto".
+            </p>
+            <pre class="pre-code">
+                <code id="foreach-code">
+                    <b>
+array.forEach(function(elemento, índice, array) {
+    </b>// código a ejecutar para cada elemento<b>
+});
+
+                    </b>
+                </code>
+            </pre>
+            <br>
+            <p>
+            <ul>
+                <li><strong>elemento:</strong> El valor actual del array que está siendo procesado.</li>
+                <li><strong>índice:</strong> La posición del elemento dentro del array.</li>
+                <li><strong>array:</strong> Referencia al array sobre el que se llamó a forEach.</li>
+            </ul>
+            </p>
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="foreach" onclick="forEach(this)">Ejemplo 1</button>
+                <button class="btn-caja" id="foreach2" onclick="forEach(this)">Ejemplo 2</button>
+                <button class="btn-caja" id="foreach3" onclick="forEach(this)">Ejemplo 3</button>
+                <button class="btn-caja btn-limpiar" onclick="limpiar()">Limpiar</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="caja">
+        <label for="map">
+            <h2>Map</h2>
+        </label>
+        <input type="checkbox" hidden id="map">
+        <div id="map-container">
+            <br>
+            <p>
+                La función orgánica map transforma los datos y devuelve siempre un array.
+                <i>"Por cada elemento que entra, ejecuta una acción, y el resultado de esa acción es el nuevo elemento
+                    que sale."</i>
+            <ul>
+                <li><b>No modifica el original:</b> Es crucial entender que map() siempre devuelve un array
+                    completamente nuevo. El array original permanece inalterado.</li>
+                <li><b>Mismo número de elementos:</b> El array nuevo que resulta siempre tendrá exactamente el
+                    mismo número de elementos que el array original.</li>
+            </ul>
+            </p>
+            <br>
+            <pre class="pre-code">
+                <code id="map-code">
+                    <b>
+const nuevoArray = array.map(function(elemento) {
+    </b>// código a ejecutar para cada elemento<b>
+});
+                    </b>
+                </code>
+            </pre>
+            <p>
+                Nota: <i>La función debe retornar algo. Si no, vas a terminar con un array lleno de undefined.</i>
+            </p>
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="map" onclick="map(this)">Ejemplo 1</button>
+                <button class="btn-caja" id="map2" onclick="map(this)">Ejemplo 2</button>
+                <button class="btn-caja btn-limpiar" onclick="limpiar()">Limpiar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <button id="btn-back-to-top" class="btn-back-to-top" title="Volver arriba">↑</button>
+
+    <script src="funciones-organicas.js" type="text/javascript"></script>
+    <script src="../assets/js/navbar.js" type="text/javascript"></script>
+    <script src="../assets/js/btn-scroll.js" type="text/javascript"></script>
+
+</body>
+
+</html>
