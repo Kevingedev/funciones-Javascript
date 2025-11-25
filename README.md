@@ -183,9 +183,7 @@ funciones-Javascript/
 ---
 
 ## 📚 Contenido Educativo
-<p align="center">
-  <img src="assets/img/Temas.png" alt="Temas" width="100%">
-</p>
+![Temas](assets/img/Temas.png)
 El proyecto cubre los siguientes temas de JavaScript:
 
 ### 1. **Sintaxis JavaScript**
