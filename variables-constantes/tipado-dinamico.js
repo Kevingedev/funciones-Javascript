@@ -48,6 +48,7 @@ typeof sumaNumerica: ${typeof sumaNumerica}
         console.log("Resultado Inesperado (texto + 10 + 5): " + resultadoInesperado);
         console.log("Tipo de variable resultadoInesperado: " + typeof resultadoInesperado);
         console.log("***************************************");
+
         dinamicoCode.innerHTML = `<b>
 <span class="keyword">let</span> primerNumero = 10;
 <span class="keyword">let</span> segundoNumero = 5;
@@ -89,7 +90,8 @@ function scope(btnScope) {
 <span class="keyword">mostrarNombre</span>();
 
 Resultado:
-Desde la funcion mostrarNombre() :  ${nombreGlobal}</b>`;
+Desde la funcion mostrarNombre() :  ${nombreGlobal}</b>
+`;
 
     } else if (btnScope.id == "scopeLocal") {
         // alert("Scope Local");
@@ -108,7 +110,8 @@ Desde la funcion mostrarNombre() :  ${nombreGlobal}</b>`;
 
 Resultado:
 console.log("Variable numeroLocal :" + numeroLocal); <span class="comment">// numeroLocal is not defined</span>
-Funcion calcularSuma() :  ${calcularSuma()}`;
+Funcion calcularSuma() :  ${calcularSuma()}
+`;
     }
 }
 

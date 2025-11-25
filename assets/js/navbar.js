@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <span></span>
             </button>
             <ul id="nav-menu">
-                <li><a href="#">INICIO</a></li>
+                <li><a href="../index.html">INICIO</a></li>
                 <li><a href="sintaxis.html">SINTAXIS</a></li>
                 <li><a href="../variables/variables.html">VARIABLES</a></li>
                 <li><a href="../variables-constantes/tipado-dinamico.html">TIPADO</a></li>
