@@ -3,6 +3,7 @@ body {
     background-color: #333;
     color: #000000;
     /* line-height: 1.2; */
+    overflow-y: scroll;
 
 }
 
@@ -133,4 +134,31 @@ ul li {
 #scope:checked~#scope-container {
     display: block;
     opacity: 1;
+}
+
+
+
+
+
+
+/* Syntax Highlighting */
+.keyword {
+    color: #ff79c6;
+    /* Pink/Purple for keywords like const, let, function, return */
+    font-weight: bold;
+}
+
+.function {
+    color: #8be9fd;
+    /* Cyan for function names */
+}
+
+.property {
+    color: #e7961c;
+    /* Orange for property names */
+}
+
+.comment {
+    color: #6a9955;
+    /* Green for comments */
 }

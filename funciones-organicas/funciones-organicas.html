@@ -96,6 +96,53 @@ const nuevoArray = array.map(function(elemento) {
         </div>
     </div>
 
+    <div class="caja">
+        <label for="filter">
+            <h2>Filter</h2>
+        </label>
+        <input type="checkbox" hidden id="filter">
+        <div id="filter-container">
+            <br>
+            <p>
+                El método filter() opera bajo los siguientes principios:
+
+            <ul>
+                <li><b>Iteración:</b> Recorre cada elemento del array original, uno por uno, en orden ascendente (indice
+                    más0
+                    bajo al más alto).</li>
+                <li><b>Ejecución de la Callback:</b> Por cada elemento, ejecuta una función de callback que le
+                    proporcionas.
+                </li>
+                <li><b>Evaluación de la Condición:</b> La función callback debe devolver un valor booleano (true o
+                    false). Esta
+                    es la condición de filtrado.</li>
+                <li>Si la callback devuelve <b>true</b> para un elemento, ese elemento se incluye en el nuevo array.
+                </li>
+                <li>Si la callback devuelve <b>false</b> para un elemento, ese elemento se omite del nuevo array.</li>
+                <li><b>Inmutabilidad:</b> filter() nunca modifica el array original. Siempre devuelve un nuevo array con
+                    los
+                    elementos filtrados. Si ningún elemento cumple la condición, devuelve un array vacío ([]).</li>
+            </ul>
+
+            </p>
+            <br>
+            <pre class="pre-code">
+                <code id="filter-code">
+                    <b>
+const nuevoArray = array.filter(callback(elemento, indice, array));
+    </b>
+                </code>
+            </pre>
+            <br>
+            <div class="btn-containers">
+                <button class="btn-caja" id="filter" onclick="filter(this)">Ejemplo 1</button>
+                <button class="btn-caja" id="filter2" onclick="filter(this)">Ejemplo 2</button>
+                <button class="btn-caja" id="filter3" onclick="filter(this)">Ejemplo 3</button>
+                <button class="btn-caja btn-limpiar" onclick="limpiar()">Limpiar</button>
+            </div>
+        </div>
+    </div>
+
 
     <button id="btn-back-to-top" class="btn-back-to-top" title="Volver arriba">↑</button>
 

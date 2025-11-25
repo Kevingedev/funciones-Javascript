@@ -42,7 +42,7 @@
                 que es de tipo string.
             </p>
             <pre class="pre-code">
-                <code>
+                <code id="dinamicoCode">
                     <b>
                     let primerNumero = 10;
                     let segundoNumero = 5;
@@ -105,18 +105,16 @@
                     </tbody>
                 </table>
             </div>
-            <pre class="pre-code"><code>
+            <pre class="pre-code"><code id="tsCode">
 // Ejemplo de Tipado Fijo   
-<b>let nombreUsuario: string = "Juliano";
-nombreUsuario = "Elizabeth"; </b> //Esto es correcto
-nombreUsuario = 123; //Esto causaria error en la compilacion
+<b><span class="keyword">let</span> nombreUsuario: <span class="function">string</span> = "Juliano";</b>
 
 // Tipado fijo en funciones
-<b>function saludar(nombre: string): void {
+<b><span class="function">function</span> saludar(nombre: <span class="function">string</span>): void {
 console.log(`Hola, ${nombre}.`);
 }
 
-saludar(nombreUsuario);</b>
+<span class="function">saludar</span>(nombreUsuario);</b>
                 </code></pre>
             <p>
                 <b>Beneficios del Tipado Fijo en TypeScript</b>
@@ -167,14 +165,12 @@ saludar(nombreUsuario);</b>
                     conflictos de nombres (colisiones) con otras variables en tu código o librerías externas.</li>
             </ul>
             </p>
-            <pre class="pre-code"><code><b>const nombreGlobal = "JavaScript";</b> // Ámbito Global
+            <pre class="pre-code"><code id="scopeGlobalCode"><b>const nombreGlobal = "JavaScript";</b> // Ámbito Global
 
 <b>function mostrarNombre() {
     console.log(nombreGlobal);</b> // Accede a la variable global
 }
-
-<b>mostrarNombre();</b> // "JavaScript"
-<b>console.log(nombreGlobal);</b> // "JavaScript"</code></pre>
+</code></pre>
             <br>
             <div class="btn-containers">
                 <button class="btn-caja" id="scopeGlobal" onclick="scope(this)">Ejemplo 1</button>
@@ -189,7 +185,7 @@ saludar(nombreUsuario);</b>
                     visibles ni accesibles desde el exterior (el ámbito global) ni desde otras funciones.</li>
             </ul>
             </p>
-            <pre class="pre-code"><code><b>function calcularSuma() {
+            <pre class="pre-code"><code id="scopeLocalCode"><b>function calcularSuma() {
   let numeroLocal = 10;</b> // Ámbito Local de la función
   <b>return numeroLocal + 5;</b>
 }
@@ -212,7 +208,7 @@ saludar(nombreUsuario);</b>
                     usarse.</li>
             </ul>
             </p>
-            <pre class="pre-code"><code><b>if (true) {
+            <pre class="pre-code"><code id="scopeBlockCode"><b>if (true) {
   const mensaje = "Hola, pertenece al bloque";
   var antiguo = "Soy VAR, Fui declarado en bloque";
   console.log(mensaje);</b> 
