@@ -220,7 +220,7 @@ console.log(usuariosActivos);
 </b>
 
 Resultado:
-Array(2) [{nombre: "Alicia"}, {nombre: "Carla"}]`;
+Array(2) [{id: 101, nombre: "Alicia"}, {id: 103, nombre: "Carla"}]`;
 
 
     } else if (btnFilter.id == "filter3") {
